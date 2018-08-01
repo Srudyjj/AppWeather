@@ -23,7 +23,7 @@ class UI {
     this.lat.textContent = `lat: ${weather.coord.lat}`;
     this.desc.textContent = weather.weather[0].description;
     this.string.textContent = `${weather.main.temp} ºC`;
-    this.icon.setAttribute("src",`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
+    this.icon.setAttribute("src",`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`);
     this.icon.setAttribute("alt",weather.weather[0].description);
     this.humidity.textContent = `Humidity: ${weather.main.humidity} %`;
     this.pressure.textContent = `Pressure: ${weather.main.pressure} hPa`;
