@@ -10,6 +10,7 @@
   <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script defer src="storage.js"></script>
   <script defer src="weather.js"></script>
+  <script defer src="forecast.js"></script>
   <script defer src="ui.js"></script>
   <script defer src="app.js"></script>
 
@@ -24,7 +25,7 @@
         <small><span id="w-lon">lon</span> | <span id="w-lat">lat</span></small>
         <h3 id="w-desc">description</h3>
         <h3 id="w-string">temperature</h3>
-        <img src="" alt="" id="w-icon">
+        <img src="" id="w-icon">
         <ul id="w-details" class="list-group mt-3 mb-5">
           <li class="list-group-item" id="w-humidity">humidity</li>
           <li class="list-group-item" id="w-pressure">pressure</li>
@@ -32,12 +33,18 @@
           <li class="list-group-item" id="w-sunrise">sunrise</li>
           <li class="list-group-item" id="w-sunset">sunset</li>  
         </ul>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#locModal">
+        
+        <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#locModal">
           Change Location
         </button>
+        <button type="button" class="btn btn-warning btn-block mb-5" id="w-forecast-btn">Forecast for 5 days</button>
+        <div class="container-fluid">
+          <div id="w-forecast" class="row"></div>
+        </div>                
       </div>
     </div>
   </div>
+  <button id="topBtn" class="btn btn-danger" style="display:none;position:fixed;bottom:20px;right:30px;z-index:99;">TOP</button>
   <!-- Modal -->
   <div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
