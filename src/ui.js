@@ -1,4 +1,4 @@
-class UI {
+export default class UI {
   constructor() {
     this.time = document.getElementById('w-time');
     this.location = document.getElementById('w-location');
@@ -55,6 +55,11 @@ class UI {
     this.container.innerHTML += listOfCart;
   }
 
+  deleteForecast() {
+    this.container.innerHTML = "";
+    document.getElementById("w-forecast-btn").removeAttribute("disabled");
+  }
+
   static scrollTop() {
     const topBtn = document.getElementById("topBtn");
     
@@ -69,10 +74,6 @@ class UI {
     topBtn.addEventListener('click', () => {
       document.documentElement.scrollTop = 0;
     });
-
-
-
-    
   }
 }
 

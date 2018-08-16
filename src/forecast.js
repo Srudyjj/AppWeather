@@ -1,5 +1,6 @@
+import Weather from "./weather";
 
-class Forecast extends Weather {
+export default class Forecast extends Weather {
     constructor(city, country_code) {
         super(city, country_code);
         //'forecast' return 5 day / 3 hour forecast data
@@ -7,6 +8,3 @@ class Forecast extends Weather {
     }
 }
 
-// forecast = new Forecast("Kharkiv", "ua");
-
-// console.log(forecast.getWeather());

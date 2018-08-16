@@ -1,4 +1,4 @@
-class Weather {
+export default class Weather {
   
   constructor(city, country_code) {
     //type='forecast/weather'
@@ -13,10 +13,10 @@ class Weather {
   }
 
   async getWeather() {
-    const responce = await fetch(`https://api.openweathermap.org/data/2.5/${this.type}?q=${this.city},${this.country_code}&units=${this.units}&APPID=${this._apiKey}`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/${this.type}?q=${this.city},${this.country_code}&units=${this.units}&APPID=${this._apiKey}`)
     .catch(err => console.log(err));
-    const responceData = await responce.json()
-    return responceData
+    const responseData = await response.json()
+    return responseData
   }
 
   changeLocation(city, country_code) {
